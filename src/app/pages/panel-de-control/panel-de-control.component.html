@@ -1,0 +1,52 @@
+<div class="text-center m-3" >
+    Cuantas personas son para el sorteo?
+</div>
+<div class="text-center m-3" *ngIf=" sorteo && !sorteo[0]; else reiniciarSorteo">
+    <p>Faltan ( {{15-usuarios.length}} ) personas para poder sortear</p>
+    <button class="btnSorteo" (click)="sortear()" [disabled]="!usuarios || usuarios.length<14">ASIGNAR REGALOS</button>
+</div>
+<ng-template #reiniciarSorteo>
+    <div class="text-center m-3">
+
+        <button class="btn btn-danger" (click)="mostrarDialog()">Reiniciar sorteo</button>
+        <div *ngIf="mostrarConfirmacion" class="confirmacionDialog">
+            <div class="card dialog">
+                <label class="h6"> Ingrese el codigo de seguridad</label>
+                <input [(ngModel)]="codigoIngresado" class="form-control" type="password"
+                    placeholder="ingrese el codigo">
+                <div style="display: flex; justify-content: space-around; width: 100%;">
+                    <button class="btn btn-secundary" (click)="mostrarConfirmacion=false">Cancelar</button>
+                    <button class="btn btn-primary" (click)="eliminarSorteo()">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<mat-tab-group>
+    <mat-tab label="Personas">
+        <ol>
+            <li *ngFor="let usuario of usuarios"> ( {{usuario.name}} ) </li>
+        </ol>
+    </mat-tab>
+    <mat-tab label="Quien me toco?" *ngIf="sorteo && sorteo[0]">
+
+        <div *ngFor="let user of sorteo[0].listaSorteada">
+            <h2 class="text-center pt-5" *ngIf="userLogged.email==user?.santa?.email">Tenes que hacerle un regalo a:
+                <br> <b> >>> {{user?.elegido?.name|uppercase}} <<< </b>
+            </h2>
+        </div>
+        <div class="text-center">
+            <img width="50%" style=" max-width: 300px;" src="../../../assets/images/gift.png" alt="">
+        </div>
+
+
+    </mat-tab>
+    <mat-tab label="A quien le toque?">
+        <h1 class="text-center pt-5 mb-0">Queres saber quien es tu santa? </h1><br>
+        <h3 class="text-center"> Envia $100 a la cuenta de Jona!</h3>
+        <div class="text-center">
+            <img width="50%" style=" max-width: 300px;" src="../../../assets/images/gollum.png" alt="">
+        </div>
+    </mat-tab>
+</mat-tab-group>

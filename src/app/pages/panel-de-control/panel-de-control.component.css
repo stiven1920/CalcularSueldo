@@ -1,0 +1,43 @@
+.btnSorteo{
+    border: 0;
+    color: black;
+    padding: 1rem;
+    background:
+      linear-gradient(217deg, rgba(251, 155, 155, 0.8), rgba(255,0,0,0) 70.71%),
+      linear-gradient(127deg, rgba(151, 248, 151, 0.8), rgba(0,255,0,0) 70.71%),
+      linear-gradient(336deg, rgba(145, 145, 248, 0.8), rgba(0,0,255,0) 70.71%);
+      box-shadow: 0 0 10px 1px black;
+      border-radius: 40px;
+      cursor: pointer;
+}
+.btnSorteo:active{
+    transform: scale(0.95);
+}
+
+.btnSorteo:disabled {
+    background: #ccc;
+  }
+.confirmacionDialog{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.349);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+
+}
+.dialog{
+    max-width: 90%;
+    width: 300px;
+    height: 200px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
