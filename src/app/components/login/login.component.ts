@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { DataBaseService } from 'src/app/services/database.service';
 
 @Component({
   selector: 'app-login',
@@ -34,6 +33,19 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  IngresarConGoogle() {
+    const { email, password } = this.usuario;
+    this.authService.loginWithGoogle(email, password).then(user => {
+      console.log("Bienvenido ", user);
+      if(!user) {
+        alert("Datos incorrectos, si no tienes cuenta por favor registrate!");
+        return;
+      };
+      this.router.navigate(['/panelDeControl'])
+    }).catch(err=>{
+      console.log(err)
+    })
+  }
 
   logout() {
     this.authService.logout();
