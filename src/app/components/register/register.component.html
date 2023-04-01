@@ -13,7 +13,7 @@
 
         <label style="float: left;">Password</label>
         <input class="form-control m-2" type="password" placeholder="ingrese su password"
-          [(ngModel)]="usuario.password">
+          [(ngModel)]="usuario.password" required="Por favor llenar este dato">
 
         <button class="btn btn-primary btn-block m-2" (click)="registrarse()">Registrar</button>
       
