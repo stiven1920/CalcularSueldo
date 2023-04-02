@@ -35,6 +35,7 @@ export class RegisterComponent implements OnInit {
 
       this.router.navigate(['/panelDeControl']);
     }).catch(err => {
+      alert("ingrese todos los datos");
       console.log(err)
     })
   }
