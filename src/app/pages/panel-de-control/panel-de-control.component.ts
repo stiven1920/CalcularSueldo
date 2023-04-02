@@ -10,7 +10,9 @@ export class PanelDeControlComponent implements OnInit {
   userLogged: any;
   categoria!: number;
   horasExtras!: number;
-  constructor( private authService: AuthService) {
+  sueldo !: number
+
+  constructor(private authService: AuthService) {
     this.authService.getUserLogged().subscribe(res => {
       this.userLogged = res;
     })
@@ -26,35 +28,77 @@ export class PanelDeControlComponent implements OnInit {
     try {
       let elExtra;
       if (this.categoria >= 1) {
-        if (this.categoria <= 5) { 
-          if ( this.categoria == 1 && this.horasExtras > 40 ||  this.horasExtras == 40) {
+        if (this.categoria <= 5) {
+          if (this.categoria == 1 && this.horasExtras > 40 || this.horasExtras == 40) {
             elExtra = 8000;
-             const resultado = ((elExtra * 40) + (( this.horasExtras - 40) * 0.25) * elExtra);
-            alert("El sueldo del empleado es: " + resultado)
+            let resultado = ((elExtra * 40) + ((this.horasExtras - 40) * 0.25) * elExtra);
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
             console.log("El sueldo del empleado es: " + resultado);
-          } else if (this. categoria == 2 &&  this.horasExtras > 40 ||  this.horasExtras == 40) {
+          } else if (this.categoria == 2 && this.horasExtras > 40 || this.horasExtras == 40) {
             elExtra = 12000;
-            const resultado = ((elExtra * 40) + (( this.horasExtras - 40) * 0.25) * elExtra);
-            alert("El sueldo del empleado es: " + resultado)
+            let resultado = ((elExtra * 40) + ((this.horasExtras - 40) * 0.25) * elExtra);
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
             console.log("El sueldo del empleado es: " + resultado);
-          } else if ( this.categoria == 3 &&  this.horasExtras > 40 ||  this.horasExtras == 40) {
+          } else if (this.categoria == 3 && this.horasExtras > 40 || this.horasExtras == 40) {
             elExtra = 18000;
-            const resultado = ((elExtra * 40) + (( this.horasExtras - 40) * 0.25) * elExtra);
-            alert("El sueldo del empleado es: " + resultado)
+            let resultado = ((elExtra * 40) + ((this.horasExtras - 40) * 0.25) * elExtra);
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
             console.log("El sueldo del empleado es: " + resultado);
-          } else if ( this.categoria == 4 &&  this.horasExtras > 40 ||  this.horasExtras == 40) {
+          } else if (this.categoria == 4 && this.horasExtras > 40 || this.horasExtras == 40) {
             elExtra = 25000;
-            const resultado = ((elExtra * 40) + (( this.horasExtras - 40) * 0.25) * elExtra);
-            alert("El sueldo del empleado es: " + resultado)
+            let resultado = ((elExtra * 40) + ((this.horasExtras - 40) * 0.25) * elExtra);
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
             console.log("El sueldo del empleado es: " + resultado);
-          } else if ( this.categoria == 5 &&  this.horasExtras > 40 ||  this.horasExtras == 40) {
+          } else if (this.categoria == 5 && this.horasExtras > 40 || this.horasExtras == 40) {
             elExtra = 32000;
-            const resultado = ((elExtra * 40) + (( this.horasExtras - 40) * 0.25) * elExtra);
-            alert("El sueldo del empleado es: " + resultado)
+            let resultado = ((elExtra * 40) + ((this.horasExtras - 40) * 0.25) * elExtra);
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
             console.log("El sueldo del empleado es: " + resultado);
+          } else if (this.categoria == 1 && this.horasExtras < 40 || this.horasExtras == 40) {
+            elExtra = 8000;
+            let resultado = ((this.horasExtras * elExtra));
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
+          } else if (this.categoria == 2 && this.horasExtras < 40 || this.horasExtras == 40) {
+            elExtra = 12000;
+            let resultado = ((this.horasExtras * elExtra));
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
+            console.log("El sueldo del empleado es: " + resultado);
+          } else if (this.categoria == 3 && this.horasExtras < 40 || this.horasExtras == 40) {
+            elExtra = 18000;
+            let resultado = ((this.horasExtras * elExtra));
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
+          } else if (this.categoria == 4 && this.horasExtras < 40 || this.horasExtras == 40) {
+            elExtra = 25000;
+            let resultado = ((this.horasExtras * elExtra));
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
+          } else if (this.categoria == 5 && this.horasExtras < 40 || this.horasExtras == 40) {
+            elExtra = 32000;
+            let resultado = ((this.horasExtras * elExtra));
+            const sueldo = resultado + this.sueldo
+            alert("Las horas extras del empleado es: " + resultado + "\n"
+              + "y el sueldo del empleado: " + sueldo);
           }
+
         } else {
-          alert("no hay categorias mayores a 5");
+          alert("no hay categorias mayores a 5: ");
           console.log("no hay categorias mayores a 5");
         }
       } else {
@@ -66,7 +110,7 @@ export class PanelDeControlComponent implements OnInit {
 
     }
   }
-  
+
 
 
 }

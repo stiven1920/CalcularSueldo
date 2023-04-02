@@ -7,11 +7,15 @@
       <div class="card-body p-4">
         <label style="float: left;"><b>Categoria:</b></label>
         <input class="form-control m-2" type="number" placeholder="ingrese la categoria del empleado"
-          [(ngModel)]="categoria">
+          [(ngModel)]="categoria" pattern="[0-9]{10}" >
 
         <label style="float: left;"><b>Horas extras: </b></label>
         <input class="form-control m-2" type="number" placeholder="ingrese su las horas trabajadas"
-          [(ngModel)]="horasExtras">
+          [(ngModel)]="horasExtras" pattern="[0-9]{60}" >
+
+        <label style="float: left;"><b>Sueldo empleado: </b></label>
+        <input class="form-control m-2" type="number" placeholder="ingrese sel sueldo del empleado"
+          [(ngModel)]="sueldo">
 
         <button class="btn btn-primary btn-block m-2" (click)="CalcularSueldo()">calcular</button>
 

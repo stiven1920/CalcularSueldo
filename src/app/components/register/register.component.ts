@@ -35,7 +35,9 @@ export class RegisterComponent implements OnInit {
 
       this.router.navigate(['/panelDeControl']);
     }).catch(err => {
-      alert("ingrese todos los datos");
+      if(err.message.includes('this.usuarios is not iterable')){
+        alert("ingrese todos los datos");
+      }
       console.log(err)
     })
   }
