@@ -35,18 +35,22 @@ export class PanelDeControlComponent implements OnInit {
           } else if (this. categoria == 2 &&  this.horasExtras > 40 ||  this.horasExtras == 40) {
             elExtra = 12000;
             const resultado = ((elExtra * 40) + (( this.horasExtras - 40) * 0.25) * elExtra);
+            alert("El sueldo del empleado es: " + resultado)
             console.log("El sueldo del empleado es: " + resultado);
           } else if ( this.categoria == 3 &&  this.horasExtras > 40 ||  this.horasExtras == 40) {
             elExtra = 18000;
             const resultado = ((elExtra * 40) + (( this.horasExtras - 40) * 0.25) * elExtra);
+            alert("El sueldo del empleado es: " + resultado)
             console.log("El sueldo del empleado es: " + resultado);
           } else if ( this.categoria == 4 &&  this.horasExtras > 40 ||  this.horasExtras == 40) {
             elExtra = 25000;
             const resultado = ((elExtra * 40) + (( this.horasExtras - 40) * 0.25) * elExtra);
+            alert("El sueldo del empleado es: " + resultado)
             console.log("El sueldo del empleado es: " + resultado);
           } else if ( this.categoria == 5 &&  this.horasExtras > 40 ||  this.horasExtras == 40) {
             elExtra = 32000;
             const resultado = ((elExtra * 40) + (( this.horasExtras - 40) * 0.25) * elExtra);
+            alert("El sueldo del empleado es: " + resultado)
             console.log("El sueldo del empleado es: " + resultado);
           }
         } else {
@@ -54,7 +58,7 @@ export class PanelDeControlComponent implements OnInit {
           console.log("no hay categorias mayores a 5");
         }
       } else {
-        alert("no hay categorias mayores a 5");
+        alert("no hay categorias menores a 5");
         console.log("no hay categorias menores a 1");
       }
     } catch (error) {

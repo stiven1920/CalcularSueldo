@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(email, password).then(user => {
       console.log("Bienvenido ", user);
       if(!user) {
-        alert("Datos incorrectos, si no tenes cuenta registrate!");
+        alert("usuario o contraseña incorrectos o no registrado!");
         return;
       };
       this.router.navigate(['/panelDeControl'])
