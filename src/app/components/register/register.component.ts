@@ -29,8 +29,8 @@ export class RegisterComponent implements OnInit {
       let lista = [...this.usuarios];
       let existe = lista.find(user => user.email == email);
 
-      if (!existe) {
-        console.log("USUARIO NUEVO CREADO")
+      if (existe === undefined) {
+        alert("No se registro")
       };
 
       this.router.navigate(['/panelDeControl']);
